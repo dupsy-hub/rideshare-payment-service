@@ -11,8 +11,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
 
-from models.database import Base
-from routes import payment_methods, transactions, health
+from src.models.database import Base
+from src.routes import payment_methods, transactions, health
 
 # Configure logging
 logging.basicConfig(
