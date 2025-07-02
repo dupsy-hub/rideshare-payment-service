@@ -53,7 +53,8 @@ app = FastAPI(
     title="Payment Service",
     description="Simplified payment processing for RideShare Pro",
     version="1.0.0",
-    lifespan=lifespan
+    lifespan=lifespan,
+    root_path="/api/payments"
 )
 
 # Add CORS middleware
