@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: payment-deployment
-  namespace: microservices
+  name: payment-service
+  namespace: rideshare
 spec:
   replicas: 2
   selector:
@@ -15,12 +15,12 @@ spec:
     spec:
       containers:
         - name: payment-service
-          image: teleiostejiriacr.azurecr.io/payment-service:v1.0
+          image: teleiosdupeacr01.azurecr.io/user-service:v1.0
           ports:
             - containerPort: 8000
           envFrom:
             - secretRef:
-                name: payment-secret
+                name: payment-service-secrets
           resources:
             requests:
               memory: "150Mi"
@@ -40,4 +40,3 @@ spec:
               port: 8000
             initialDelaySeconds: 10
             periodSeconds: 20
-

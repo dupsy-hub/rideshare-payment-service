@@ -2,9 +2,9 @@ apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
   name: payment-service-pdb
-  namespace: microservices
+  namespace: rideshare
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: payment-service 
+      app: payment-service
